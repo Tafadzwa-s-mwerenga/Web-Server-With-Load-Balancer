@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Fun App</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 50px;
+            background: linear-gradient(135deg, #000428, #004e92);
+            color: white;
+        }
+        h1 {
+            color: #ffffff;
+            font-size: 3em;
+            text-shadow: 2px 2px #1e3c72;
+        }
+        p {
+            font-size: 1.5em;
+        }
+        .container {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        button {
+            background-color: #1e3c72;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #0f2a4d;
+        }
+        #exercise-list {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hey there, fitness warrior! 💪</h1>
+        <p>Feeling ready to crush it today? Let's get moving and make it happen! 🏋️‍♂️🔥</p>
+        <button onclick="startWorkout()">Give Me a Challenge!</button>
+        <button onclick="resetWorkout()">Reset</button>
+        <div id="exercise-list"></div>
+    </div>
+    <script>
+        function startWorkout() {
+            const exercises = [
+                'Drop and give me 10 push-ups! 💪',
+                '20 jumping jacks – feel the energy! 🤸',
+                '15 squats – let’s build those legs! 🏋️‍♂️',
+                'Hold a plank for 30 seconds – core power! 🤜',
+                'Run in place for a minute – let’s go! 🏃'
+            ];
+            const randomExercise = exercises[Math.floor(Math.random() * exercises.length)];
+            document.getElementById('exercise-list').innerHTML = `<p>${randomExercise}</p>`;
+        }
+
+        function resetWorkout() {
+            document.getElementById('exercise-list').innerHTML = '';
+        }
+    </script>
+</body>
+</html>
